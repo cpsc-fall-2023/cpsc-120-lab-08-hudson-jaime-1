@@ -14,11 +14,11 @@ int main(int argc, char* argv[]) {
     std::cout << "error: you must supply at least one number\n";
     return 1;
   }
-  bool isFirst{true};
+  bool is_first{true};
   float sum = 0;
   for (std::string& argument : arguments) {
-    if (isFirst) {
-      isFirst = false;
+    if (is_first) {
+      is_first = false;
       continue;
     }
 
@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
     sum = sum + cont;
   }
 
-  float ammount = arguments.size() - 1;
+  auto ammount = static_cast<float>(arguments.size() - 1);
   std::cout << "average = " << sum / ammount << '\n';
   return 0;
 }
